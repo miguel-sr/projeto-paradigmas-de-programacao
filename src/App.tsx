@@ -1,7 +1,10 @@
 import "./styles/global.css";
 
+import { RouterProvider } from "react-router-dom";
+import rotas from "./routes";
+
 function App() {
-  return <h1>Vite + React + TS + Tailwind</h1>;
+  return <RouterProvider router={rotas} />;
 }
 
 export default App;
