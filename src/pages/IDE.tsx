@@ -1,13 +1,12 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Timeline from "../components/ConteudoN1/Timeline";
 
-export default function Homepage() {
+export default function IDE() {
   return (
     <>
       <Navbar />
-      <section>
-        <Timeline />
+      <section className="h-screen flex justify-center items-center">
+        <h1 className="text-2xl">Em breve...</h1>
       </section>
       <Footer />
     </>
