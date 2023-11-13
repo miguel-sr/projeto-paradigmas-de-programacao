@@ -23,7 +23,14 @@ export default function Toolbar({
   setLinguagemSelecionada: React.Dispatch<React.SetStateAction<number>>;
   setResultado: React.Dispatch<React.SetStateAction<string | undefined>>;
 }) {
-  const [listaDeLinguagens, setListaDeLinguagens] = useState<ILinguagem[]>();
+  const [listaDeLinguagens, setListaDeLinguagens] = useState<ILinguagem[]>(
+    new Array(1).fill({
+      id: 0,
+      name: "Selecione",
+      short: "aa",
+      versions: [{ id: "1" }],
+    } as ILinguagem)
+  );
 
   useEffect(() => {
     ObterLinguagensDisponiveis();
