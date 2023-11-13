@@ -11,7 +11,7 @@ export default function Decada1960() {
       icone={<BiSolidNetworkChart />}
     >
       <h3 className="font-semibold">ARPANET</h3>
-      <p className="font-normal m-0">
+      <p className="font-normal my-1">
         A década de 1960 foi marcada pela miniaturização e popularização dos
         computadores. Surgiram os primeiros mainframes, e a IBM lançou o IBM
         System/360, que estabeleceu padrões de compatibilidade. A ARPANET,

@@ -1,4 +1,11 @@
-import { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 type ModalLanguagesContextType = {
   isModalLanguageOpen: boolean;
@@ -8,21 +15,25 @@ type ModalLanguagesContextType = {
     content: string;
   };
   setIsModalLanguageOpen: Dispatch<SetStateAction<boolean>>;
-  setModalLanguageInfo: Dispatch<SetStateAction<{
-    imageUrl: string;
-    name: string;
-    content: string;
-  }>>;
+  setModalLanguageInfo: Dispatch<
+    SetStateAction<{
+      imageUrl: string;
+      name: string;
+      content: string;
+    }>
+  >;
 };
 
-const ModalLanguagesContext = createContext<ModalLanguagesContextType | undefined>(undefined);
+const ModalLanguagesContext = createContext<
+  ModalLanguagesContextType | undefined
+>(undefined);
 
 export function ModalLanguagesProvider({ children }: { children: ReactNode }) {
   const [isModalLanguageOpen, setIsModalLanguageOpen] = useState(false);
   const [modalLanguageInfo, setModalLanguageInfo] = useState({
-    imageUrl: '',
-    name: '',
-    content: '',
+    imageUrl: "",
+    name: "",
+    content: "",
   });
 
   const contextValue: ModalLanguagesContextType = {
@@ -42,7 +53,7 @@ export function ModalLanguagesProvider({ children }: { children: ReactNode }) {
 export function useModalLanguages() {
   const context = useContext(ModalLanguagesContext);
   if (context === undefined) {
-    throw new Error('useModal must be used within a ModalLanguagesProvider');
+    throw new Error("useModal must be used within a ModalLanguagesProvider");
   }
   return context;
 }

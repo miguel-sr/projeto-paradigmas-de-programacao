@@ -1,4 +1,11 @@
-import { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 type ModalParadigmsContextType = {
   isModalParadigmOpen: boolean;
@@ -8,21 +15,25 @@ type ModalParadigmsContextType = {
     content: string;
   };
   setIsModalParadigmOpen: Dispatch<SetStateAction<boolean>>;
-  setModalParadigmInfo: Dispatch<SetStateAction<{
-    imageUrl: string;
-    name: string;
-    content: string;
-  }>>;
+  setModalParadigmInfo: Dispatch<
+    SetStateAction<{
+      imageUrl: string;
+      name: string;
+      content: string;
+    }>
+  >;
 };
 
-const ModalParadigmsContext = createContext<ModalParadigmsContextType | undefined>(undefined);
+const ModalParadigmsContext = createContext<
+  ModalParadigmsContextType | undefined
+>(undefined);
 
 export function ModalParadigmsProvider({ children }: { children: ReactNode }) {
   const [isModalParadigmOpen, setIsModalParadigmOpen] = useState(false);
   const [modalParadigmInfo, setModalParadigmInfo] = useState({
-    imageUrl: '',
-    name: '',
-    content: '',
+    imageUrl: "",
+    name: "",
+    content: "",
   });
 
   const contextValue: ModalParadigmsContextType = {
@@ -42,7 +53,7 @@ export function ModalParadigmsProvider({ children }: { children: ReactNode }) {
 export function useModalParadigms() {
   const context = useContext(ModalParadigmsContext);
   if (context === undefined) {
-    throw new Error('useModal must be used within a ModalParadigmsProvider');
+    throw new Error("useModal must be used within a ModalParadigmsProvider");
   }
   return context;
 }

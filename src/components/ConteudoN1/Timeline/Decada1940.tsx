@@ -13,7 +13,7 @@ export default function Decada1940() {
     >
       <h3 className="font-semibold">Os Primeiros Computadores</h3>
       <div className="flex flex-col">
-        <p className="font-normal m-0">
+        <p className="font-normal my-1">
           Durante a Segunda Guerra Mundial, o desenvolvimento de computadores
           eletrônicos acelerou, levando à construção do ENIAC nos Estados Unidos
           em 1945, muitas vezes considerado o primeiro computador eletrônico de

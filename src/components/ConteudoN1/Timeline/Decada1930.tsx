@@ -13,7 +13,7 @@ export default function Decada1930() {
     >
       <h3 className="font-semibold">Alan Turing</h3>
       <div className="flex flex-col">
-        <p className="font-normal m-0">
+        <p className="font-normal my-1">
           A jornada começa com a Máquina de Turing, um conceito teórico
           inventado por Alan Turing em 1936. Essa máquina imaginária consistia
           em uma fita infinita, uma cabeça de leitura/escrita e um conjunto de

@@ -4,7 +4,7 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { white, zinc } from "tailwindcss/colors";
 
 interface IPontoTimelineProps {
-  data: string;
+  data?: string;
   icone: ReactNode;
   corIcone: string;
   children: ReactNode;

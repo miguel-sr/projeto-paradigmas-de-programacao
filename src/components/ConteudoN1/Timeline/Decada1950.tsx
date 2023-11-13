@@ -13,7 +13,7 @@ export default function Decada1950() {
     >
       <h3 className="font-semibold">Os Primeiros Computadores</h3>
       <div className="flex flex-col">
-        <p className="font-normal m-0">
+        <p className="font-normal my-1">
           Esta década viu o surgimento dos primeiros computadores comerciais,
           como o UNIVAC I, que foi usado para fins de processamento de dados
           empresariais e científicos. A linguagem de programação Fortran também
