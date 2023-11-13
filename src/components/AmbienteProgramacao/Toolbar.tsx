@@ -76,11 +76,12 @@ export default function Toolbar({
         <option defaultChecked value={undefined}>
           Selecione
         </option>
-        {listaDeLinguagens?.map((x) => (
-          <option key={x.id} value={x.id}>
-            {x.name}
-          </option>
-        ))}
+        {listaDeLinguagens &&
+          listaDeLinguagens.map((x) => (
+            <option key={x.id} value={x.id}>
+              {x.name}
+            </option>
+          ))}
       </select>
     </div>
   );
