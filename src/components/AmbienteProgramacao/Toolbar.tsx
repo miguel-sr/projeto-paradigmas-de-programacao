@@ -1,16 +1,6 @@
 import api from "../../lib/axios";
 
-import { useEffect, useState } from "react";
 import "./AmbienteProgramacao.css";
-
-interface ILinguagem {
-  id: number;
-  name: string;
-  short: string;
-  versions: {
-    id: string;
-  }[];
-}
 
 export default function Toolbar({
   codigo,
@@ -23,30 +13,45 @@ export default function Toolbar({
   setLinguagemSelecionada: React.Dispatch<React.SetStateAction<number>>;
   setResultado: React.Dispatch<React.SetStateAction<string | undefined>>;
 }) {
-  const [listaDeLinguagens, setListaDeLinguagens] = useState<ILinguagem[]>(
-    new Array(1).fill({
-      id: 0,
-      name: "Selecione",
-      short: "aa",
-      versions: [{ id: "1" }],
-    } as ILinguagem)
-  );
-
-  useEffect(() => {
-    ObterLinguagensDisponiveis();
-  }, []);
-
-  async function ObterLinguagensDisponiveis() {
-    const resposta = await api.get("sphere/compilers");
-    setListaDeLinguagens(resposta.data);
-  }
+  const listaDeLinguagens = [
+    {
+      id: 86,
+      name: "C#",
+      version: 7,
+    },
+    {
+      id: 1,
+      name: "C++",
+      version: 1,
+    },
+    {
+      id: 5,
+      name: "Fortran",
+      version: 1,
+    },
+    {
+      id: 10,
+      name: "Java",
+      version: 1,
+    },
+    {
+      id: 56,
+      name: "Node.js",
+      version: 1,
+    },
+    {
+      id: 116,
+      name: "Python 3.x",
+      version: 1,
+    },
+  ];
 
   async function CompilarCodigo() {
     if (linguagemSelecionada == undefined) return;
 
     const compilerVersionId =
-      listaDeLinguagens?.find((x) => x.id == linguagemSelecionada)?.versions[0]
-        .id || 1;
+      listaDeLinguagens?.find((x) => x.id == linguagemSelecionada)?.version ||
+      1;
 
     const submissionData = {
       compilerId: linguagemSelecionada,
@@ -83,12 +88,11 @@ export default function Toolbar({
         <option defaultChecked value={undefined}>
           Selecione
         </option>
-        {listaDeLinguagens &&
-          listaDeLinguagens.map((x) => (
-            <option key={x.id} value={x.id}>
-              {x.name}
-            </option>
-          ))}
+        {listaDeLinguagens.map((x) => (
+          <option key={x.id} value={x.id}>
+            {x.name}
+          </option>
+        ))}
       </select>
     </div>
   );
